@@ -6,7 +6,6 @@ This is a project I created for school to generate a markdown file to use as a R
 
 
 ## Here is a video of the page to show you functionality 
-
-
+_make sure to let it load for a few seconds before playing, google drive doesn't always give the best quality at first_
 https://drive.google.com/file/d/13Nz8_R_inQrUMqGz-2fnOSf-J-hg10cJ/view
 
