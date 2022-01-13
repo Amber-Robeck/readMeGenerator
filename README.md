@@ -8,6 +8,10 @@ This is a project I created for school to generate a markdown file to use as a R
 ## Here is a video of the page to show you functionality
 * otherwise there are GIFS of the functionality as well
 
+
+https://user-images.githubusercontent.com/94136164/149424584-64bcae8d-f189-4723-9db0-41a5a1feacbc.mp4
+
+
 https://drive.google.com/file/d/13Nz8_R_inQrUMqGz-2fnOSf-J-hg10cJ/view
 
 _make sure to let it load for a few seconds before playing, google drive doesn't always give the best quality at first_
