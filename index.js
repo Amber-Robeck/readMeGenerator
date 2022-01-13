@@ -8,8 +8,13 @@ const generateMarkdown = require('./utils/generateMarkdown')
 inquirer.prompt([
     {
         type: "input",
-        message: "What is your name?",
+        message: "What is your GitHub username?",
         name: "username"
+    },
+    {
+        type: "imput",
+        message: "What is your preferred email?",
+        name: "email"
     },
     {
         type: "input",
@@ -21,6 +26,34 @@ inquirer.prompt([
         message: "Brief description of project:",
         name: "projDesc"
     },
+    {
+        type: "list",
+        message: "How will users install?",
+        name: "projIns",
+        choices: ["skip", "ins1", "ins2", "ins3"]
+    },
+    {
+        type: "input",
+        message: "How do users use this?",
+        name: "projUsage"
+    },
+    {
+        type: "input",
+        message: "How can people contribute?",
+        name: "projContrib"
+    },
+    {
+        type: "input",
+        message: "Are there any tests?",
+        name: "projTest"
+    },
+    {
+        type: "list",
+        message: "Would you like a license?",
+        name: "projLic",
+        choices: ["skip", "lic1", "lic2", "lic3"]
+    },
+
 ])
     .then((answers) => {
         console.log(answers);
