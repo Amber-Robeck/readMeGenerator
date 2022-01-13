@@ -11,13 +11,19 @@
 
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-// function renderLicenseBadge(projLic) {
-//   if (projLic == "MIT") {
-//     https://img.shields.io/npm/l/c?style=for-the-badge MIT
-//   }
-
-
-// }
+function renderLicenseBadge(data) {
+  if (data === "MIT") {
+    return ("https://img.shields.io/npm/l/c?style=for-the-badge")
+  } else if (data === "ISC") {
+    return ("https://img.shields.io/npm/l/d?style=for-the-badge")
+  } else if (data === "Apache-2.0") {
+    return ("https://img.shields.io/npm/l/s?style=for-the-badge")
+  } else if (data === "Gpl-3.0") {
+    return ("https://img.shields.io/npm/l/v?style=for-the-badge")
+  } else if (data === "Skip") {
+    return;
+  } console.log("didn't work")
+}
 
 // var link = data.projLic;
 // TODO: Create a function that returns the license link
@@ -37,36 +43,38 @@ function renderLicenseLink(data) {
 function generateMarkdown(data) {
   var link = data.projLic;
   console.log(link)
-  var something = renderLicenseLink(link.toLowerCase());
+  var fullLink = renderLicenseLink(link.toLowerCase());
+  var badgeLink = renderLicenseBadge(link);
   return (`# ${data.projName}
+
+  ![${link}](${badgeLink})
 
   ## Description
 
   ${data.projDesc}
+
   ---
 
-  ## Table of Contents (Optional)
+  ## Table of Contents
+  
   - [Installation](#installation)
   - [Usage](#usage)
   - [Credits](#credits)
   - [License](#license)
-  - [Contributions](#contribution-guidelines)
+  - [Contributions](#how-to-contribute)
   - [Test](#test)
   - [Questions](#questions)
 
   ## Usage
 
   ${data.projUsage}
+
   ---
 
   ## Installation
 
   ${data.projIns}
-  ---
 
-  ## Contribution guidelines
-
-  ${data.projContrib}
   ---
           
   ![alt text](assets/images/screenshot.png)
@@ -74,30 +82,36 @@ function generateMarkdown(data) {
   ## Test
 
   ${data.projTest}
+
   ---
 
 
   ## Credits
 
+
   ---
 
   ## License
 
-  ${something}
+  [${link}](${fullLink})
 
-  ![license](https://img.shields.io/npm/l/c?style=for-the-badge)
+  
   ---
   
   ## How to Contribute
 
+  ${data.projContrib}
+
   [Contributor Covenant](https://www.contributor-covenant.org/)
+
   ---
 
   ## Questions
   
-  Contact me here: ${data.email}
+  Contact me here:   ${data.email}
   
   [My gitHub profile](https://github.com/${data.username})
+
   ---
 
 `);
