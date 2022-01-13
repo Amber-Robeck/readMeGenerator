@@ -22,6 +22,12 @@ _make sure to let it load for a few seconds before playing, google drive doesn't
 
 ![GIF of page](generateReadme.gif "GIF of Init")
 
+### Basic function 
+
+![GIF of page](basicFunction.gif "GIF of Init")
+
+
+
 
 
 
