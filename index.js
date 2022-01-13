@@ -27,10 +27,9 @@ inquirer.prompt([
         name: "projDesc"
     },
     {
-        type: "list",
+        type: "input",
         message: "How will users install?",
         name: "projIns",
-        choices: ["skip", "ins1", "ins2", "ins3"]
     },
     {
         type: "input",
@@ -51,7 +50,7 @@ inquirer.prompt([
         type: "list",
         message: "Would you like a license?",
         name: "projLic",
-        choices: ["skip", "lic1", "lic2", "lic3"]
+        choices: ["ISC", "MIT", "Apache 2.0", "Gpl 3.0"]
     },
 
 ])
