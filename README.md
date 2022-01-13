@@ -2,7 +2,8 @@
 
 ## Description
 
-This is a project I created for school to generate a markdown file to use as a README.MD. This page is made using Node.js and does not have a deployed page.
+This is a project I created for school to generate a markdown file to use as a README.MD. This page is made using Node.js and does not have a deployed page. As a student I was instructed to create an application that takes in user information to create a simple readMe file. Using the inquirer module I collected user information through prompts and using the file system module I generate a markdown file using the information provided by the user. There was a develop folder provided to me with the assignment and I myself only added to the functionality to the already defined functions in the index.js and generateMarkdown.js. 
+
 
 
 ## Here is a video of the page to show you functionality
@@ -29,11 +30,20 @@ _make sure to let it load for a few seconds before playing, google drive doesn't
 
 ### Generate readMe
 
-![GIF of page](generateReadme.gif "GIF of Init")
+![GIF of page](generateReadme.gif "GIF of generate readme")
 
 ### Basic function 
 
-![GIF of page](basicFunction.gif "GIF of Init")
+![GIF of page](basicFunction.gif "GIF of basic function")
+
+
+## Screenshot of sample.md page created during video
+
+![Screenshot](screenshotSampleMd.png "Screenshot of sample.md")
+
+
+
+_this file is also found_  [here](https://github.com/Amber-Robeck/readMeGenerator/blob/main/sample.md "Link to sample.md") 
 
 
 
