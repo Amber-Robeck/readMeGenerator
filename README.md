@@ -9,10 +9,15 @@ This is a project I created for school to generate a markdown file to use as a R
 * otherwise there are GIFS of the functionality as well
 
 
-https://user-images.githubusercontent.com/94136164/149424584-64bcae8d-f189-4723-9db0-41a5a1feacbc.mp4
 
 
-https://drive.google.com/file/d/13Nz8_R_inQrUMqGz-2fnOSf-J-hg10cJ/view
+
+https://user-images.githubusercontent.com/94136164/149424785-dcad73aa-e45e-44de-a9f5-94c4356e2f61.mp4
+
+
+
+[Here is a link to the video](https://drive.google.com/file/d/13Nz8_R_inQrUMqGz-2fnOSf-J-hg10cJ/view "video of page")
+
 
 _make sure to let it load for a few seconds before playing, google drive doesn't always give the best quality at first_
 
