@@ -13,4 +13,15 @@ https://drive.google.com/file/d/13Nz8_R_inQrUMqGz-2fnOSf-J-hg10cJ/view
 _make sure to let it load for a few seconds before playing, google drive doesn't always give the best quality at first_
 
 ## GIFS of functionality
+
+### Init application
+
 ![GIF of page](init.gif "GIF of Init")
+
+### Generate readMe
+
+![GIF of page](generateReadme.gif "GIF of Init")
+
+
+
+
