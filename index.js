@@ -50,7 +50,7 @@ inquirer.prompt([
         type: "list",
         message: "Would you like a license?",
         name: "projLic",
-        choices: ["ISC", "MIT", "Apache 2.0", "Gpl 3.0"]
+        choices: ["ISC", "MIT", "Apache-2.0", "Gpl-3.0"]
     },
 
 ])

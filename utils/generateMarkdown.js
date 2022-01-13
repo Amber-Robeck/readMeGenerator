@@ -19,20 +19,31 @@
 
 // }
 
+// var link = data.projLic;
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(projLic) { }
-
+function renderLicenseLink(data) {
+  if (data) {
+    var conLink = `https://choosealicense.com/licenses/${data}/`
+    return conLink;
+  } return;
+}
+// renderLicenseLink(projLic)
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(proLic) { }
+// function renderLicenseSection(proLic) { }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  var link = data.projLic;
+  console.log(link)
+  var something = renderLicenseLink(link.toLowerCase());
   return (`# ${data.projName}
 
   ## Description
+
   ${data.projDesc}
+  ---
 
   ## Table of Contents (Optional)
   - [Installation](#installation)
@@ -44,33 +55,50 @@ function generateMarkdown(data) {
   - [Questions](#questions)
 
   ## Usage
+
   ${data.projUsage}
+  ---
 
   ## Installation
+
   ${data.projIns}
+  ---
 
   ## Contribution guidelines
+
   ${data.projContrib}
+  ---
           
   ![alt text](assets/images/screenshot.png)
       
   ## Test
+
   ${data.projTest}
+  ---
 
 
   ## Credits
 
-      
+  ---
+
   ## License
+
+  ${something}
+
   ![license](https://img.shields.io/npm/l/c?style=for-the-badge)
   ---
+  
   ## How to Contribute
+
   [Contributor Covenant](https://www.contributor-covenant.org/)
+  ---
 
   ## Questions
-
+  
   Contact me here: ${data.email}
+  
   [My gitHub profile](https://github.com/${data.username})
+  ---
 
 `);
 }
