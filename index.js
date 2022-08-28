@@ -17,24 +17,20 @@ function writeToFile(fileName, data) {
 };
 
 function assembleQuestions(array1, array2) {
+    let array;
     if (!array2) {
-        return inquirer.prompt(array1)
-            .then((answers) => {
-                writeToFile("newReadMe.md", generateMarkdown(answers));
-            })
-            .catch(err => {
-                console.log(err);
-            });
+        array = array1
     }
     else if (array1 && array2) {
-        return inquirer.prompt(array1.concat(array2))
-            .then((answers) => {
-                writeToFile("newReadMe.md", generateMarkdown(answers));
-            })
-            .catch(err => {
-                console.log(err);
-            });
+        array = array1.concat(array2)
     }
+    return inquirer.prompt(array)
+        .then((answers) => {
+            writeToFile("newReadMe.md", generateMarkdown(answers));
+        })
+        .catch(err => {
+            console.log(err);
+        });
 };
 
 function choiceSwitch(choice) {
