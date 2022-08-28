@@ -30,7 +30,7 @@ function renderLicenseLink(data) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   var link = data.projLic;
-  console.log(link)
+  // console.log(link)
   var fullLink = renderLicenseLink(link.toLowerCase());
   var badgeLink = renderLicenseBadge(link);
   return (`# ${data.projName}
