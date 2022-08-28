@@ -16,24 +16,34 @@ function writeToFile(fileName, data) {
 
 };
 
+function assembleQuestions(array1, array2) {
+    return inquirer.prompt(array1)
+        .then((answers) => {
+            writeToFile("newReadMe.md", generateMarkdown(answers));
+        })
+        .catch(err => {
+            console.log(err);
+        });
+};
+
+function choiceSwitch(choice) {
+    switch (choice.mainOption) {
+        case optionsArray[0]:
+            assembleQuestions(basicQ);
+            break;
+        case optionsArray[1]:
+            console.log("advanced")
+            break;
+        default:
+            console.log("Something went wrong");
+    }
+};
+
 //function to initialize app
 function init() {
     inquirer.prompt(initQuestion)
         .then((choice) => {
-            switch (choice.mainOption) {
-                case optionsArray[0]:
-                    inquirer.prompt(basicQ)
-                        .then((answers) => {
-                            writeToFile("newReadMe.md", generateMarkdown(answers));
-                        })
-                        .catch(err => {
-                            console.log(err);
-                        });
-                    break;
-                case optionsArray[1]:
-                    console.log("advanced")
-                    break;
-            }
+            choiceSwitch(choice);
         })
 };
 
