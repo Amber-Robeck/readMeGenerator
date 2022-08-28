@@ -16,25 +16,25 @@ function writeToFile(fileName, data) {
 
 };
 
-function assembleQuestions(array1, array2) {
-    if (!array2) {
-        return inquirer.prompt(array1)
-            .then((answers) => {
-                writeToFile("newReadMe.md", generateMarkdown(answers));
-            })
-            .catch(err => {
-                console.log(err);
-            });
+function assembleQuestions(array1, array2, array3) {
+    let array;
+    if (array1 && array2 && array3) {
+        console.log("Third times the charm")
+        array = array1.concat(array2, array3)
     }
     else if (array1 && array2) {
-        return inquirer.prompt(array1.concat(array2))
-            .then((answers) => {
-                writeToFile("newReadMe.md", generateMarkdown(answers));
-            })
-            .catch(err => {
-                console.log(err);
-            });
+        array = array1.concat(array2)
     }
+    else {
+        array = array1
+    }
+    return inquirer.prompt(array)
+        .then((answers) => {
+            writeToFile("newReadMe.md", generateMarkdown(answers));
+        })
+        .catch(err => {
+            console.log(err);
+        });
 };
 
 function choiceSwitch(choice) {
@@ -45,6 +45,10 @@ function choiceSwitch(choice) {
         case optionsArray[1]:
             console.log("advanced")
             assembleQuestions(basicQ, advancedQ);
+            break;
+        case optionsArray[2]:
+            console.log("professional")
+            assembleQuestions(basicQ, advancedQ, professionalQ);
             break;
         default:
             console.log("Something went wrong");
