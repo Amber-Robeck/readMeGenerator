@@ -1,60 +1,8 @@
 //packages needed for this application
 const fs = require('fs');
-const inquirer = require('inquirer')
-const generateMarkdown = require('./utils/generateMarkdown')
-
-//array of questions for user input
-const questions = [
-
-    {
-        type: "input",
-        message: "What is your GitHub username?",
-        name: "username"
-    },
-    {
-        type: "imput",
-        message: "What is your preferred email?",
-        name: "email"
-    },
-    {
-        type: "input",
-        message: "What is your project name?",
-        name: "projName"
-    },
-    {
-        type: "input",
-        message: "Brief description of project:",
-        name: "projDesc"
-    },
-    {
-        type: "input",
-        message: "How will users install?",
-        name: "projIns",
-    },
-    {
-        type: "input",
-        message: "How do users use this?",
-        name: "projUsage"
-    },
-    {
-        type: "input",
-        message: "How can people contribute?",
-        name: "projContrib"
-    },
-    {
-        type: "input",
-        message: "Are there any tests?",
-        name: "projTest"
-    },
-    {
-        type: "list",
-        message: "Would you like a license?",
-        name: "projLic",
-        choices: ["Skip", "ISC", "MIT", "Apache-2.0", "Gpl-3.0"]
-    },
-
-];
-
+const inquirer = require('inquirer');
+const generateMarkdown = require('./utils/generateMarkdown');
+const questions = require('./utils/questions');
 
 //function to write README file
 function writeToFile(fileName, data) {
