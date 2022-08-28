@@ -1,6 +1,16 @@
 //array of questions for user input
-module.exports = questions = [
+const questions = [
 
+    {
+        type: "input",
+        message: "What is your repository name?",
+        name: "projName"
+    },
+    {
+        type: "input",
+        message: "Please add a brief description of the project.",
+        name: "projDesc"
+    },
     {
         type: "input",
         message: "What is your GitHub username?",
@@ -10,16 +20,6 @@ module.exports = questions = [
         type: "imput",
         message: "What is your preferred email?",
         name: "email"
-    },
-    {
-        type: "input",
-        message: "What is your project name?",
-        name: "projName"
-    },
-    {
-        type: "input",
-        message: "Brief description of project:",
-        name: "projDesc"
     },
     {
         type: "input",
@@ -47,5 +47,29 @@ module.exports = questions = [
         name: "projLic",
         choices: ["Skip", "ISC", "MIT", "Apache-2.0", "Gpl-3.0"]
     },
+    {
+        type: "confirm",
+        message: "Do you want a section for screenshots/images/walkthrough video?",
+        name: "projImages"
+    },
+    {
+        type: "confirm",
+        message: "Do you want to add any other sections?",
+        name: "projAddSection"
+    }
+];
+
+const initQuestion = [
+    {
+        type: "list",
+        message: "What type of Readme do you want to build?",
+        name: "mainOption",
+        choices: ["Basic (Title, Description, Questions)",
+            "Advanced (Basic plus Usage, Tests, Contributions)",
+            "Professional(Advanced plus Installation, Issues)",
+            "Custom (Add your own sections)"]
+    },
 
 ];
+
+module.exports = { questions, initQuestion }
