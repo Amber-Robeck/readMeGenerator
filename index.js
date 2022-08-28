@@ -17,13 +17,24 @@ function writeToFile(fileName, data) {
 };
 
 function assembleQuestions(array1, array2) {
-    return inquirer.prompt(array1)
-        .then((answers) => {
-            writeToFile("newReadMe.md", generateMarkdown(answers));
-        })
-        .catch(err => {
-            console.log(err);
-        });
+    if (!array2) {
+        return inquirer.prompt(array1)
+            .then((answers) => {
+                writeToFile("newReadMe.md", generateMarkdown(answers));
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }
+    else if (array1 && array2) {
+        return inquirer.prompt(array1.concat(array2))
+            .then((answers) => {
+                writeToFile("newReadMe.md", generateMarkdown(answers));
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }
 };
 
 function choiceSwitch(choice) {
@@ -33,6 +44,7 @@ function choiceSwitch(choice) {
             break;
         case optionsArray[1]:
             console.log("advanced")
+            assembleQuestions(basicQ, advancedQ);
             break;
         default:
             console.log("Something went wrong");
