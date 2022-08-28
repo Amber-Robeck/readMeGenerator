@@ -26,9 +26,32 @@ function renderLicenseLink(data) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 // function renderLicenseSection() { }
+function capitalizeFirstLetter(string) {
+  string.toLowerCase;
+  const firstLetterCap = string.charAt(0).toUpperCase() + string.slice(1);
+
+  return firstLetterCap;
+}
+
+
+function generateSection(name, data) {
+  name = capitalizeFirstLetter(name);
+  return `## ${name}
+  
+  ${data}
+  
+  ---
+  `
+};
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  let basicL = ['license', 'questions'];
+  let advancedL = ['usage', 'contribution', 'testing'];
+  let professionalL = ['install', 'issues'];
+  if (Object.keys(data).length <= 5) {
+    console.log("Basic")
+  }
   var link = data.projLic;
   // console.log(link)
   var fullLink = renderLicenseLink(link.toLowerCase());
@@ -37,11 +60,7 @@ function generateMarkdown(data) {
 
   ![${link}](${badgeLink})
 
-  ## Description
-
-  ${data.projDesc}
-
-  ---
+  ${generateSection('description', data.projDesc)}
 
   ## Table of Contents
   
@@ -99,6 +118,8 @@ function generateMarkdown(data) {
   [My gitHub profile](https://github.com/${data.username})
 
   ---
+
+  ${generateSection("new field", "This is some random data for testing")}
 
 `);
 }
