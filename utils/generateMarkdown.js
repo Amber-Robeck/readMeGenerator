@@ -49,21 +49,54 @@ function generateMarkdown(data) {
   let basicL = ['license', 'questions'];
   let advancedL = ['usage', 'contribution', 'testing'];
   let professionalL = ['install', 'issues'];
-  if (Object.keys(data).length <= 5) {
-    console.log("Basic")
-  }
+
   var link = data.projLic;
   // console.log(link)
   var fullLink = renderLicenseLink(link.toLowerCase());
   var badgeLink = renderLicenseBadge(link);
-  return (`# ${data.projName}
+
+
+  ///if basic
+  if (Object.keys(data).length <= 5) {
+    console.log("Basic")
+
+    return `# ${data.projName}
+
+![${link}](${badgeLink})
+  
+${generateSection('description', data.projDesc)}
+  
+## Table of Contents
+    
+- [License](#license)
+- [Questions](#questions)
+    
+
+## License
+
+[${link}](${fullLink})
+
+---
+
+## Questions
+  
+Contact me here: ${data.email}
+
+[My gitHub profile](https://github.com/${data.username})
+
+---
+
+`
+  } else {
+
+    return `# ${data.projName}
 
   ![${link}](${badgeLink})
 
   ${generateSection('description', data.projDesc)}
 
   ## Table of Contents
-  
+
   - [Installation](#installation)
   - [Usage](#usage)
   - [Credits](#credits)
@@ -72,56 +105,32 @@ function generateMarkdown(data) {
   - [Test](#test)
   - [Questions](#questions)
 
-  ## Usage
 
-  ${data.projUsage}
+  ${generateSection('test', data.projTest)}
 
-  ---
-
-  ## Installation
-
-  ${data.projIns}
-
-  ---
-      
-  ## Test
-
-  ${data.projTest}
-
-  ---
-
-
-  ## Credits
-
-
-  ---
+  ${generateSection('credits', 'empty')}
 
   ## License
 
   [${link}](${fullLink})
 
-  
-  ---
-  
-  ## How to Contribute
-
-  ${data.projContrib}
-
-  [Contributor Covenant](https://www.contributor-covenant.org/)
 
   ---
+  
+  ${generateSection('how to contribute', data.projContrib)}
 
   ## Questions
   
-  Contact me here:   ${data.email}
-  
+  Contact me here: ${data.email}
+
   [My gitHub profile](https://github.com/${data.username})
 
   ---
 
-  ${generateSection("new field", "This is some random data for testing")}
+    ${generateSection("new field", "This is some random data for testing")}
 
-`);
+    `;
+  }
 }
 
 module.exports = generateMarkdown;
