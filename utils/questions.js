@@ -31,7 +31,7 @@ const basicQ = [
 const advancedQ = [
     {
         type: "input",
-        message: "How do users use this?",
+        message: "How do users use this project?",
         name: "projUsage"
     },
     {
@@ -49,12 +49,12 @@ const advancedQ = [
 const professionalQ = [
     {
         type: "input",
-        message: "How will users install?",
+        message: "How do users install?",
         name: "projIns",
     },
     {
         type: "input",
-        message: "How will other report issues?",
+        message: "How will others report issues?",
         name: "projIss",
     },
 
