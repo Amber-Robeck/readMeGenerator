@@ -2,7 +2,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
-const { questions, initQuestion } = require('./utils/questions');
+const { questions, initQuestion, optionsArray } = require('./utils/questions');
 
 //function to write README file
 function writeToFile(fileName, data) {
@@ -21,7 +21,7 @@ function init() {
     inquirer.prompt(initQuestion)
         .then((choice) => {
             switch (choice.mainOption) {
-                case "Basic (Title, Description, Questions)":
+                case optionsArray[0]:
                     inquirer.prompt(questions)
                         .then((answers) => {
                             console.log(answers.projAddSections)
@@ -31,7 +31,7 @@ function init() {
                             console.log(err);
                         });
                     break;
-                case "Advanced (Basic plus Usage, Tests, Contributions)":
+                case optionsArray[1]:
                     console.log("advanced")
                     break;
             }

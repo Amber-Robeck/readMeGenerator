@@ -59,17 +59,24 @@ const questions = [
     }
 ];
 
+const optionsArray = [
+    "Basic (Title, Description, Questions)",
+    "Advanced (Basic plus Usage, Tests, Contributions)",
+    "Professional(Advanced plus Installation, Issues)",
+    "Custom (Add your own sections)"
+];
+// let basic = "Basic (Title, Description, Questions)";
+// let advanced = "Advanced (Basic plus Usage, Tests, Contributions)";
+// let professional = "Professional(Advanced plus Installation, Issues)";
+// let custom = "Custom (Add your own sections)";
 const initQuestion = [
     {
         type: "list",
         message: "What type of Readme do you want to build?",
         name: "mainOption",
-        choices: ["Basic (Title, Description, Questions)",
-            "Advanced (Basic plus Usage, Tests, Contributions)",
-            "Professional(Advanced plus Installation, Issues)",
-            "Custom (Add your own sections)"]
+        choices: [optionsArray[0], optionsArray[1], optionsArray[2], optionsArray[3]]
     },
 
 ];
 
-module.exports = { questions, initQuestion }
+module.exports = { questions, initQuestion, optionsArray }
