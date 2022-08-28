@@ -16,13 +16,17 @@ function writeToFile(fileName, data) {
 
 };
 
-function assembleQuestions(array1, array2) {
+function assembleQuestions(array1, array2, array3) {
     let array;
-    if (!array2) {
-        array = array1
+    if (array1 && array2 && array3) {
+        console.log("Third times the charm")
+        array = array1.concat(array2, array3)
     }
     else if (array1 && array2) {
         array = array1.concat(array2)
+    }
+    else {
+        array = array1
     }
     return inquirer.prompt(array)
         .then((answers) => {
@@ -41,6 +45,10 @@ function choiceSwitch(choice) {
         case optionsArray[1]:
             console.log("advanced")
             assembleQuestions(basicQ, advancedQ);
+            break;
+        case optionsArray[2]:
+            console.log("professional")
+            assembleQuestions(basicQ, advancedQ, professionalQ);
             break;
         default:
             console.log("Something went wrong");
