@@ -57,8 +57,19 @@ const questions = [
 
 
 //function to write README file
-function writeToFile(data) {
-    return generateMarkdown(data);
+// function writeToFile(data) {
+//     return generateMarkdown(data);
+
+// }
+
+function writeToFile(fileName, data) {
+   return fs.writeFile(fileName, data,
+                (err) => {
+                    if (err) {
+                        console.log(err);
+                    }
+                    console.log("Successful");
+                })
 
 }
 
@@ -68,15 +79,16 @@ function init() {
 
         .then((answers) => {
             console.log(answers);
-            var markupStr = writeToFile(answers);
-            console.log(markupStr);
-            fs.writeFile('newReadMe.md', markupStr,
-                (err) => {
-                    if (err) {
-                        console.log(err);
-                    }
-                    console.log("Successful");
-                })
+            // var markupStr = generateMarkdown(answers)
+            writeToFile("newReadMe.md", generateMarkdown(answers));
+            // console.log(markupStr);
+            // fs.writeFile('./dist/newReadMe.md', markupStr,
+            //     (err) => {
+            //         if (err) {
+            //             console.log(err);
+            //         }
+            //         console.log("Successful");
+            //     })
         })
         .catch(err => {
             console.log(err);
