@@ -2,7 +2,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
-const { questions, initQuestion, optionsArray } = require('./utils/questions');
+const { initQuestion, optionsArray, basicQ, advancedQ, professionalQ, customQ } = require('./utils/questions');
 
 //function to write README file
 function writeToFile(fileName, data) {
@@ -22,9 +22,8 @@ function init() {
         .then((choice) => {
             switch (choice.mainOption) {
                 case optionsArray[0]:
-                    inquirer.prompt(questions)
+                    inquirer.prompt(basicQ)
                         .then((answers) => {
-                            console.log(answers.projAddSections)
                             writeToFile("newReadMe.md", generateMarkdown(answers));
                         })
                         .catch(err => {

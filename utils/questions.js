@@ -1,6 +1,5 @@
-//array of questions for user input
-const questions = [
-
+//array of questions for basic readme
+const basicQ = [
     {
         type: "input",
         message: "What is your repository name?",
@@ -22,10 +21,14 @@ const questions = [
         name: "email"
     },
     {
-        type: "input",
-        message: "How will users install?",
-        name: "projIns",
+        type: "list",
+        message: "Would you like a license?",
+        name: "projLic",
+        choices: ["Skip", "ISC", "MIT", "Apache-2.0", "Gpl-3.0"]
     },
+];
+
+const advancedQ = [
     {
         type: "input",
         message: "How do users use this?",
@@ -41,12 +44,23 @@ const questions = [
         message: "Are there any tests?",
         name: "projTest"
     },
+];
+
+const professionalQ = [
     {
-        type: "list",
-        message: "Would you like a license?",
-        name: "projLic",
-        choices: ["Skip", "ISC", "MIT", "Apache-2.0", "Gpl-3.0"]
+        type: "input",
+        message: "How will users install?",
+        name: "projIns",
     },
+    {
+        type: "input",
+        message: "How will other report issues?",
+        name: "projIss",
+    },
+
+];
+
+const customQ = [
     {
         type: "confirm",
         message: "Do you want a section for screenshots/images/walkthrough video?",
@@ -65,10 +79,7 @@ const optionsArray = [
     "Professional(Advanced plus Installation, Issues)",
     "Custom (Add your own sections)"
 ];
-// let basic = "Basic (Title, Description, Questions)";
-// let advanced = "Advanced (Basic plus Usage, Tests, Contributions)";
-// let professional = "Professional(Advanced plus Installation, Issues)";
-// let custom = "Custom (Add your own sections)";
+
 const initQuestion = [
     {
         type: "list",
@@ -79,4 +90,4 @@ const initQuestion = [
 
 ];
 
-module.exports = { questions, initQuestion, optionsArray }
+module.exports = { initQuestion, optionsArray, basicQ, advancedQ, professionalQ, customQ };
