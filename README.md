@@ -2,7 +2,19 @@
 
 ## Description
 
-This is a project I created for school to generate a markdown file to use as a README.MD. This page is made using Node.js and does not have a deployed page. As a student I was instructed to create an application that takes in user information to create a simple readMe file. Using the inquirer module I collected user information through prompts and using the file system module I generate a markdown file using the information provided by the user. There was a develop folder provided to me with the assignment and I myself only added to the functionality to the already defined functions in the index.js and generateMarkdown.js.
+This is a project I originally created for school to generate a markdown file to use as a README.MD. This page is made using Node.js and does not have a deployed page. As a student I was instructed to create an application that takes in user information to create a simple readMe file. Using the inquirer module I collected user information through prompts and using the file system module I generate a markdown file using the information provided by the user. There was a develop folder provided to me with the assignment and I myself only added to the functionality to the already defined functions in the index.js and generateMarkdown.js.
+
+Started new updates on 08/28/2022--->>>>>>
+
+- Fixed file structure
+- Added prompts for whether user would like a simple, regular or advanced readme
+
+Future updates brewing--->>>>>>
+
+- Would like to add more options to generate installation instuctions-ex. if node.js project npm i, node index.js to run
+- Would like a choose a badge section for dependencies and tools used
+- Has a prompt for custom sections that is currently not active
+- Use a cli tool to make application a pop a little more
 
 ## Here is a video of the page to show you functionality
 
