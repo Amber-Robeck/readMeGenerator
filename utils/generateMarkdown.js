@@ -87,8 +87,51 @@ Contact me here: ${data.email}
 ---
 
 `
-  } else {
+  } else if (Object.keys(data).length <= 8) {
+    console.log("advanced")
+    return `# ${data.projName}
 
+    ![${link}](${badgeLink})
+  
+    ${generateSection('description', data.projDesc)}
+  
+    ## Table of Contents
+  
+    - [Installation](#installation)
+    - [Usage](#usage)
+    - [Credits](#credits)
+    - [License](#license)
+    - [Contributions](#how-to-contribute)
+    - [Test](#test)
+    - [Questions](#questions)
+  
+  
+    ${generateSection('test', data.projTest)}
+  
+    ${generateSection('credits', 'empty')}
+  
+    ## License
+  
+    [${link}](${fullLink})
+  
+  
+    ---
+    
+    ${generateSection('how to contribute', data.projContrib)}
+  
+    ## Questions
+    
+    Contact me here: ${data.email}
+  
+    [My gitHub profile](https://github.com/${data.username})
+  
+    ---
+  
+      ${generateSection("new field", "This is some random data for testing")}
+  
+      `;
+  } else {
+    console.log("professional")
     return `# ${data.projName}
 
   ![${link}](${badgeLink})
@@ -109,6 +152,8 @@ Contact me here: ${data.email}
   ${generateSection('test', data.projTest)}
 
   ${generateSection('credits', 'empty')}
+
+  ${generateSection('installation', data.projIns)}
 
   ## License
 
