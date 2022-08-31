@@ -30,6 +30,7 @@ function assembleQuestions(array1, array2, array3) {
     }
     return inquirer.prompt(array)
         .then((answers) => {
+            console.log(answers)
             writeToFile("newReadMe.md", generateMarkdown(answers));
         })
         .catch(err => {
