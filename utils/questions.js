@@ -48,9 +48,18 @@ const advancedQ = [
 
 const professionalQ = [
     {
-        type: "input",
-        message: "How do users install?",
+        type: "checkbox",
+        message: "How do users install? (Press SPACE to choose)",
         name: "projIns",
+        choices: [
+            "Skip this step for now",
+            "Clone the repository",
+            "`npm i` to install required dependencies",
+            "`npm start` to start the development server",
+            "`node server.js` to start the server",
+            "`node index.js` to start the application",
+            "No need to install this project is currently deployed. (Check deployed link)"
+        ]
     },
     {
         type: "input",
