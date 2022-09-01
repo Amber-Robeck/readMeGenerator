@@ -97,7 +97,6 @@ Contact me here: ${data.email}
   
     ## Table of Contents
   
-    - [Installation](#installation)
     - [Usage](#usage)
     - [Credits](#credits)
     - [License](#license)
@@ -149,11 +148,12 @@ Contact me here: ${data.email}
   - [Questions](#questions)
 
 
-  ${generateSection('test', data.projTest)}
+  ${generateSection('installation', data.projIns)}
+
+  ${generateSection('usage', data.projUsage)}
 
   ${generateSection('credits', 'empty')}
 
-  ${generateSection('installation', data.projIns)}
 
   ## License
 
@@ -164,6 +164,8 @@ Contact me here: ${data.email}
   
   ${generateSection('how to contribute', data.projContrib)}
 
+  ${generateSection('test', data.projTest)}
+
   ## Questions
   
   Contact me here: ${data.email}
@@ -172,7 +174,6 @@ Contact me here: ${data.email}
 
   ---
 
-    ${generateSection("new field", "This is some random data for testing")}
 
     `;
   }
