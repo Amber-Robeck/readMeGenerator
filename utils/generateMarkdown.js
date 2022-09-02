@@ -54,7 +54,33 @@ function generateMarkdown(data) {
   // console.log(link)
   var fullLink = renderLicenseLink(link.toLowerCase());
   var badgeLink = renderLicenseBadge(link);
+  // var basicTemplate = `# ${data.projName}
 
+  // ![${link}](${badgeLink})
+
+  // ${generateSection('description', data.projDesc)}
+
+  // ## Table of Contents
+
+  // - [License](#license)
+  // - [Questions](#questions)
+
+
+  // ## License
+
+  // [${link}](${fullLink})
+
+  // ---
+
+  // ## Questions
+
+  // Contact me here: ${data.email}
+
+  // [My gitHub profile](https://github.com/${data.username})
+
+  // ---
+
+  // `
 
   ///if basic
   if (Object.keys(data).length <= 5) {
@@ -68,8 +94,7 @@ ${generateSection('description', data.projDesc)}
   
 ## Table of Contents
     
-- [License](#license)
-- [Questions](#questions)
+${buildTableOfContents('basic')}
     
 
 ## License
@@ -97,12 +122,8 @@ Contact me here: ${data.email}
   
     ## Table of Contents
   
-    - [Usage](#usage)
-    - [Credits](#credits)
-    - [License](#license)
-    - [Contributions](#how-to-contribute)
-    - [Test](#test)
-    - [Questions](#questions)
+
+    ${buildTableOfContents('advanced')}
   
   
     ${generateSection('test', data.projTest)}
@@ -139,13 +160,7 @@ Contact me here: ${data.email}
 
   ## Table of Contents
 
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Credits](#credits)
-  - [License](#license)
-  - [Contributions](#how-to-contribute)
-  - [Test](#test)
-  - [Questions](#questions)
+ ${buildTableOfContents()}
 
 
   ${generateSection('installation', data.projIns)}
@@ -177,6 +192,41 @@ Contact me here: ${data.email}
 
     `;
   }
+};
+
+
+function buildTableOfContents(optionString) {
+  var tableOf = ``
+  switch (optionString) {
+    case "basic":
+      `
+      - [License](#license)
+      - [Questions](#questions)
+      `
+      break;
+    case "advanced":
+      `
+      - [Credits](#credits)
+      - [Contributions](#how-to-contribute)
+      - [Test](#test)
+      - [License](#license)
+      - [Questions](#questions)
+      `
+      break;
+    case "professional":
+      tableOf = `
+      - [Installation](#installation)
+      - [Usage](#usage)
+      - [Credits](#credits)
+      - [Contributions](#how-to-contribute)
+      - [Test](#test)
+      - [License](#license)
+      - [Questions](#questions)
+      `
+      break;
+
+  }
+  return tableOf;
 }
 
 module.exports = generateMarkdown;
