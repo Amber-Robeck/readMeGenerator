@@ -37,7 +37,8 @@ const advancedQ = [
     {
         type: "input",
         message: "How can people contribute?",
-        name: "projContrib"
+        name: "projContrib",
+        default: "Contact me though Github or Email me."
     },
     {
         type: "input",
