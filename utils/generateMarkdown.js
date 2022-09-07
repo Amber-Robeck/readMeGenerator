@@ -34,14 +34,36 @@ function capitalizeFirstLetter(string) {
 }
 
 
-function generateSection(name, data) {
+function generateSection(name, data, link, linkText, optionalMessage) {
   name = capitalizeFirstLetter(name);
-  return `## ${name}
+  if (!link && !optionalMessage) {
+    return `## ${name}
   
-  ${data}
+${data}
   
-  ---
-  `
+---
+`
+  } else if (!optionalMessage) {
+    return `## ${name}
+    
+${data}
+  
+![${linkText}](${link})
+  
+  
+---
+`
+  } else {
+    return `## ${name}
+    
+${data}
+    
+${optionalMessage} ![${linkText}](${link})
+    
+    
+---
+`
+  }
 };
 
 // TODO: Create a function to generate markdown for README
@@ -76,13 +98,7 @@ ${buildTableOfContents('basic')}
 
 ---
 
-## Questions
-  
-Contact me here: ${data.email}
-
-[My gitHub profile](https://github.com/${data.username})
-
----
+${generateSection('questions', `Contact me here:  ${data.email}`, `https://github.com/${data.username}`, 'My gitHub profile')}
 
 `
   } else if (Object.keys(data).length <= 8) {
@@ -112,15 +128,11 @@ Contact me here: ${data.email}
     
   ${generateSection('how to contribute', data.projContrib)}
   
-  ## Questions
-    
-  Contact me here: ${data.email}
-  
-  [My gitHub profile](https://github.com/${data.username})
+
+  ${generateSection('questions', `Contact me here:  ${data.email}`, `https://github.com/${data.username}`, 'My gitHub profile')}
   
   ---
   
-  ${generateSection("new field", "This is some random data for testing")}
   
   `;
   } else {
@@ -154,11 +166,7 @@ Contact me here: ${data.email}
 
   ${generateSection('test', data.projTest)}
 
-  ## Questions
-  
-  Contact me here: ${data.email}
-
-  [My gitHub profile](https://github.com/${data.username})
+  ${generateSection('questions', `Contact me here:  ${data.email}`, `https://github.com/${data.username}`, 'My gitHub profile')}
 
   ---
 
