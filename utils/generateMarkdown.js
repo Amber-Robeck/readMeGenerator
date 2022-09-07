@@ -116,40 +116,40 @@ Contact me here: ${data.email}
     console.log("advanced")
     return `# ${data.projName}
 
-    ![${link}](${badgeLink})
+  ![${link}](${badgeLink})
   
-    ${generateSection('description', data.projDesc)}
+  ${generateSection('description', data.projDesc)}
   
-    ## Table of Contents
+  ## Table of Contents
   
 
-    ${buildTableOfContents('advanced')}
+  ${buildTableOfContents('advanced')}
   
   
-    ${generateSection('test', data.projTest)}
+  ${generateSection('test', data.projTest)}
   
-    ${generateSection('credits', 'empty')}
+  ${generateSection('credits', 'empty')}
   
-    ## License
+  ## License
   
-    [${link}](${fullLink})
+  [${link}](${fullLink})
   
   
-    ---
+  ---
     
-    ${generateSection('how to contribute', data.projContrib)}
+  ${generateSection('how to contribute', data.projContrib)}
   
-    ## Questions
+  ## Questions
     
-    Contact me here: ${data.email}
+  Contact me here: ${data.email}
   
-    [My gitHub profile](https://github.com/${data.username})
+  [My gitHub profile](https://github.com/${data.username})
   
-    ---
+  ---
   
-      ${generateSection("new field", "This is some random data for testing")}
+  ${generateSection("new field", "This is some random data for testing")}
   
-      `;
+  `;
   } else {
     console.log("professional")
     return `# ${data.projName}
@@ -160,7 +160,7 @@ Contact me here: ${data.email}
 
   ## Table of Contents
 
- ${buildTableOfContents()}
+  ${buildTableOfContents("professional")}
 
 
   ${generateSection('installation', data.projIns)}
@@ -196,33 +196,33 @@ Contact me here: ${data.email}
 
 
 function buildTableOfContents(optionString) {
-  var tableOf = ``
+  var tableOf;
   switch (optionString) {
     case "basic":
-      `
-      - [License](#license)
-      - [Questions](#questions)
-      `
+      tableOf = `
+  - [License](#license)
+  - [Questions](#questions)
+  `
       break;
     case "advanced":
-      `
-      - [Credits](#credits)
-      - [Contributions](#how-to-contribute)
-      - [Test](#test)
-      - [License](#license)
-      - [Questions](#questions)
-      `
+      tableOf = `
+  - [Credits](#credits)
+  - [Contributions](#how-to-contribute)
+  - [Test](#test)
+  - [License](#license)
+  - [Questions](#questions)
+  `
       break;
     case "professional":
       tableOf = `
-      - [Installation](#installation)
-      - [Usage](#usage)
-      - [Credits](#credits)
-      - [Contributions](#how-to-contribute)
-      - [Test](#test)
-      - [License](#license)
-      - [Questions](#questions)
-      `
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Credits](#credits)
+  - [Contributions](#how-to-contribute)
+  - [Test](#test)
+  - [License](#license)
+  - [Questions](#questions)
+  `
       break;
 
   }
