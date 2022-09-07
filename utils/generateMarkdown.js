@@ -54,33 +54,6 @@ function generateMarkdown(data) {
   // console.log(link)
   var fullLink = renderLicenseLink(link.toLowerCase());
   var badgeLink = renderLicenseBadge(link);
-  // var basicTemplate = `# ${data.projName}
-
-  // ![${link}](${badgeLink})
-
-  // ${generateSection('description', data.projDesc)}
-
-  // ## Table of Contents
-
-  // - [License](#license)
-  // - [Questions](#questions)
-
-
-  // ## License
-
-  // [${link}](${fullLink})
-
-  // ---
-
-  // ## Questions
-
-  // Contact me here: ${data.email}
-
-  // [My gitHub profile](https://github.com/${data.username})
-
-  // ---
-
-  // `
 
   ///if basic
   if (Object.keys(data).length <= 5) {
